@@ -1,0 +1,111 @@
+/* use text-align: center; to center inline block elements in their container */
+/* use vertical-align: top; on your inline elements and then manually set height */
+/* to use responsive units for height, the PARENT of each child using that unit needs height set too */
+/* use box-sizing: border-box; so padding/border does not get ADDED to your box */
+body {
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #f9e4e7;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+.header {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 85%;
+    height: 20%;
+    padding: 40px 0;
+    background-color: #f1e3d7;
+    position: relative;
+}
+.header > h1 {
+    margin: 0;
+}
+.logo {
+    position: absolute;
+    left:0;
+    top:0;
+}
+.title {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top:0;
+    right:0;
+}
+li {
+    display: inline-block;
+}
+.container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 85%;
+    height: 80%;
+    padding: 15px;
+    background-color: #dfc197;
+    font-size: 0;
+    text-align: center;
+}
+.container > * {
+    font-size: 1rem;
+}
+.stats-area, .game-area {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.stats-area {
+    width: 20%;
+    height: 100%;
+    margin-right: 25px;
+    background-color: #f1e3d7;
+}
+.game-area {
+    width: 70%;
+    height: 100%;
+    background-color: #f1e3d7;
+    font-size: 0;
+}
+.game-area > * {
+    font-size: 1rem;
+}
+/* We use .card-container to create spacing between cards (rather than margin),
+.card as the non-static parent element for the .front and .back images that are position:absolute;,
+which are also holding the images which we will toggle between*/
+.card-container {
+    background-color: transparent;
+    width: 16.66%;
+    height: 33.33%;
+    display: inline-block;
+}
+.card {
+    position: relative;
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+.front, .front > img, .back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+}
+.front{
+    background-color: #ffffff;
+}
+.back{
+    background-color: #c68497;
+    /*background: url('');*/
+}
+.card:hover > .back{
+    display: none;
+}
