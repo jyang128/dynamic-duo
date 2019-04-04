@@ -5,17 +5,17 @@
 body {
     margin: 0 auto;
     height: 100vh;
-    background-color: #f9e4e7;
+    background-color: rgba(255, 234, 237, 0);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
 .header {
     box-sizing: border-box;
     margin: 0 auto;
-    width: 85%;
-    height: 20%;
+    width: 100%;
+    height: 15%;
     padding: 40px 0;
-    background-color: #f1e3d7;
+    background-color: rgba(227, 227, 227, 0.96);
     position: relative;
 }
 .header > h1 {
@@ -23,8 +23,11 @@ body {
 }
 .logo {
     position: absolute;
-    left:0;
-    top:0;
+    left:20px;
+    top:20px;
+}
+.logo img {
+    width: 15%;
 }
 .title {
     text-align: center;
@@ -43,10 +46,10 @@ li {
 .container {
     box-sizing: border-box;
     margin: 0 auto;
-    width: 85%;
-    height: 80%;
-    padding: 15px;
-    background-color: #dfc197;
+    width: 100%;
+    height: 85%;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
     font-size: 0;
     text-align: center;
 }
@@ -57,17 +60,18 @@ li {
     display: inline-block;
     vertical-align: top;
     text-align: center;
+    border-radius: 5px;
 }
 .stats-area {
     width: 20%;
     height: 100%;
     margin-right: 25px;
-    background-color: #f1e3d7;
+    background-color: rgba(227, 227, 227, 0.96);
 }
 .game-area {
     width: 70%;
     height: 100%;
-    background-color: #f1e3d7;
+    background-color: rgba(246, 246, 246, 0.56);
     font-size: 0;
 }
 .game-area > * {
@@ -84,12 +88,12 @@ which are also holding the images which we will toggle between*/
 }
 .card {
     position: relative;
-    top: 5%;
-    left: 5%;
-    height: 90%;
-    width: 90%;
+    top: 7%;
+    left: 7%;
+    height: 86%;
+    width: 86%;
     background-color: #ffffff;
-    border-radius: 15px;
+    /*border-radius: 15px;*/
 }
 .front, .front > img, .back{
     height: 100%;
@@ -97,15 +101,13 @@ which are also holding the images which we will toggle between*/
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 15px;
+    /*border: .5px solid #c2c2c2;*/
+    /*border-radius: 15px;*/
 }
-.front{
+.front {
     background-color: #ffffff;
 }
-.back{
-    background-color: #c68497;
+.back {
+    background-color: rgba(0, 0, 0, 0.65);
     /*background: url('');*/
-}
-.card:hover > .back{
-    display: none;
 }
