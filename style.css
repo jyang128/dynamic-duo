@@ -104,34 +104,38 @@ body {
     top: 0;
 }
 .back {
-    /* background-color: rgba(255, 255, 255, 0.75); */
+    background-color: white; /*do this so the images don't flash on load*/
     content:url('images/cardback.png');
 }
-.congrats {
+/* modal to hold the modal pieces that will need to be centered */
+.congrats-modal {
     display: none;
-    box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0; 
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    padding: 20px 0;
     text-align: center;
-    background-color:rgba(255, 255, 255, 1);
+    background-color:white;
 }
-.congrats div {
-    font-size: 3em;
-    box-sizing: border-box;
+.congrats-modal img {
+    width: 100%;
 }
-.congrats p {
-    font-size: 2em;
+.congrats-modal div {
+    font-size: 1.75em;
+}
+.congrats-modal p {
+    font-size: 1em;
     color: #cd0000;
-    width: 80%;
-    margin: 0 auto;
 }
-.congrats > img {
-    position: relative;
-    width: 50%;
+/* center the contents of the container */
+/* top and left are relative to the parent */
+/* transform: translate () moves from the origin of the element itself! */
+.congrats-modal-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
 }
 @media screen and (min-width: 580px) {
     .header > p {

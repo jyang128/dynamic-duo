@@ -30,10 +30,10 @@ var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
 
-//reset button invokes reset_stats function
+//reset button sets up the game again and increments games played
 $('.reset-button').on('click', function(){
         games_played++;
-        $('.congrats').fadeOut(500); // hide the overlay
+        $('.congrats-modal').fadeOut(500); // hide the overlay
         $('.card-container').remove();
         createCards(fullImages);
         appendCardsToDom();
@@ -84,39 +84,37 @@ function card_clicked() {
     $(this).fadeOut(300);
     if (first_card_clicked === null) {
         first_card_clicked = $(this).prev().find('img').attr('src');
-        console.log(first_card_clicked);
         first_card_back = $(this);
     } else {
         second_card_clicked = $(this).prev().find('img').attr('src');
-        console.log(second_card_clicked);
         second_card_back = $(this);
         if (first_card_clicked === second_card_clicked) {
             match_counter++;
-            console.log(match_counter);
             display_stats();
             first_card_clicked = null;
             second_card_clicked = null;
             if (match_counter === total_possible_matches) {
                 // SPECIAL CONGRATS
-                setTimeout(function(){
-                    $('.congrats').fadeIn(500);
-                    }, 500);
+                setTimeout(show_win, 500);
             }
         } else {
             //prevent any further clicks until flip_card runs
             $('.back').off('click', card_clicked);
-            setTimeout(function(){
-                flip_card();
-                }, 900);
-            first_card_clicked = null;
-            second_card_clicked = null;
+            setTimeout(flip_card, 900);
+            //note that subsequent lines of code still continue to run even during setTimeout
         }
         attempts++;
         accuracy = (match_counter / attempts) * 100;
         display_stats();
     }
 }
+//callback functions to reference inside setTimeout functions
+function show_win(){
+    $('.congrats-modal').fadeIn(500);
+}
 function flip_card() {
+    first_card_clicked = null;
+    second_card_clicked = null;
     first_card_back.fadeIn(100);
     second_card_back.fadeIn(100);
     $('.back').on('click', card_clicked);
