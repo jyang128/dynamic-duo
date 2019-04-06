@@ -1,113 +1,120 @@
-/* use text-align: center; to center inline block elements in their container */
-/* use vertical-align: top; on your inline elements and then manually set height */
-/* to use responsive units for height, the PARENT of each child using that unit needs height set too */
-/* use box-sizing: border-box; so padding/border does not get ADDED to your box */
 body {
     margin: 0 auto;
+    background: url('images/calvin-and-hobbes-abstract.png') no-repeat;
+    background-size: cover;
     height: 100vh;
-    background-color: rgba(255, 234, 237, 0);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     box-sizing: border-box;
+}
+@font-face {
+    font-family: "Calvin";
+    src: url(fonts/calvin.ttf);
 }
 .header {
     box-sizing: border-box;
     margin: 0 auto;
     width: 100%;
-    height: 15%;
-    padding: 40px 0;
-    background-color: rgba(227, 227, 227, 0.96);
-    position: relative;
-}
-.header > h1 {
-    margin: 0;
-}
-.logo {
-    position: absolute;
-    left:20px;
-    top:20px;
-}
-.logo img {
-    width: 15%;
-}
-.title {
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0.55);
     text-align: center;
 }
-ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    position: absolute;
-    top:0;
-    right:0;
+.header > p {
+    font-size: 1em;
 }
-li {
+.stats-area {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 85%;
+    font-size:0;
+}
+.stats-area > * {
+    font-size: 18px;
+    vertical-align: top;
+    text-align: center;
+}
+.stats-area div {
+    margin: 0 auto;
     display: inline-block;
+    width: 20%;
+}
+.reset-button {
+    transition: all .2s ease-in-out;
+}
+.reset-button:hover {
+    transform: scale(1.2);
+    color: #cd0000;
+    cursor: pointer;
+}
+.reset-button:active {
+    transform: scale(1.25);
+    color: #cd0000;
+    cursor: pointer;
 }
 .container {
     box-sizing: border-box;
     margin: 0 auto;
-    width: 100%;
-    height: 85%;
-    padding: 25px;
-    background-color: rgb(255, 255, 255);
+    width: 85%;
+    height: 90%;
     font-size: 0;
+    padding: 10px;
     text-align: center;
 }
 .container > * {
     font-size: 1rem;
 }
-.stats-area, .game-area {
-    display: inline-block;
+.game-area {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
     vertical-align: top;
     text-align: center;
-    border-radius: 5px;
-}
-.stats-area {
-    width: 20%;
-    height: 100%;
-    margin-right: 25px;
-    background-color: rgba(227, 227, 227, 0.96);
-}
-.game-area {
-    width: 70%;
-    height: 100%;
-    background-color: rgba(246, 246, 246, 0.56);
     font-size: 0;
 }
 .game-area > * {
     font-size: 1rem;
 }
-/* We use .card-container to create spacing between cards (rather than margin),
-.card as the non-static parent element for the .front and .back images that are position:absolute;,
-which are also holding the images which we will toggle between*/
 .card-container {
+    position: relative;
     background-color: transparent;
     width: 16.66%;
     height: 33.33%;
     display: inline-block;
+    transition: all .1s ease-in-out;
+}
+.card-container:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 .card {
-    position: relative;
-    top: 7%;
-    left: 7%;
-    height: 86%;
-    width: 86%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 87%;
+    width: 87%;
     background-color: #ffffff;
-    /*border-radius: 15px;*/
+    border-radius: 15px;
+    box-shadow: 6px 6px 6px 0 rgba(0,0,0,0.5);
 }
 .front, .front > img, .back{
     height: 100%;
     width: 100%;
     position: absolute;
+    border-radius: 15px;
     left: 0;
     top: 0;
-    /*border: .5px solid #c2c2c2;*/
-    /*border-radius: 15px;*/
-}
-.front {
-    background-color: #ffffff;
 }
 .back {
-    background-color: rgba(0, 0, 0, 0.65);
-    /*background: url('');*/
+    /*background-color: rgba(255, 255, 255, 0.75);*/
+    content:url('images/cardback.png');
+}
+@media screen and (min-width: 580px) {
+    .header > p {
+        font-size: 2rem;
+    }
+    .header {
+        height: 8%;
+    }
+    .container {
+        height: 92%;
+    }
 }
