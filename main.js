@@ -32,13 +32,13 @@ var games_played = 0;
 
 //reset button invokes reset_stats function
 $('.reset-button').on('click', function(){
-    games_played++;
-    $('.card-container').remove();
-    createCards(fullImages);
-    appendCardsToDom();
-    $('.back').on('click', card_clicked);
-    reset_stats();
-    $('.back').show();
+        games_played++;
+        $('.congrats').fadeOut(500); // hide the overlay
+        $('.card-container').remove();
+        createCards(fullImages);
+        appendCardsToDom();
+        $('.back').on('click', card_clicked);
+        reset_stats();
 });
 
 function reset_stats(){
@@ -81,7 +81,7 @@ function appendCardsToDom(){
 }
 
 function card_clicked() {
-    $(this).hide();
+    $(this).fadeOut(300);
     if (first_card_clicked === null) {
         first_card_clicked = $(this).prev().find('img').attr('src');
         console.log(first_card_clicked);
@@ -97,14 +97,17 @@ function card_clicked() {
             first_card_clicked = null;
             second_card_clicked = null;
             if (match_counter === total_possible_matches) {
-                console.log('You win!');
+                // SPECIAL CONGRATS
+                setTimeout(function(){
+                    $('.congrats').fadeIn(500);
+                    }, 500);
             }
         } else {
             //prevent any further clicks until flip_card runs
             $('.back').off('click', card_clicked);
             setTimeout(function(){
                 flip_card();
-                }, 1000);
+                }, 900);
             first_card_clicked = null;
             second_card_clicked = null;
         }
@@ -114,7 +117,7 @@ function card_clicked() {
     }
 }
 function flip_card() {
-    first_card_back.show();
-    second_card_back.show();
+    first_card_back.fadeIn(100);
+    second_card_back.fadeIn(100);
     $('.back').on('click', card_clicked);
 }

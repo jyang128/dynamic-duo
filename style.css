@@ -46,7 +46,7 @@ body {
     cursor: pointer;
 }
 .reset-button:active {
-    transform: scale(1.25);
+    transform: scale(1.15);
     color: #cd0000;
     cursor: pointer;
 }
@@ -104,17 +104,43 @@ body {
     top: 0;
 }
 .back {
-    /*background-color: rgba(255, 255, 255, 0.75);*/
+    /* background-color: rgba(255, 255, 255, 0.75); */
     content:url('images/cardback.png');
+}
+.congrats {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100vh;
+    padding: 20px 0;
+    text-align: center;
+    background-color:rgba(255, 255, 255, 1);
+}
+.congrats div {
+    font-size: 3em;
+    box-sizing: border-box;
+}
+.congrats p {
+    font-size: 2em;
+    color: #cd0000;
+    width: 80%;
+    margin: 0 auto;
+}
+.congrats > img {
+    position: relative;
+    width: 50%;
 }
 @media screen and (min-width: 580px) {
     .header > p {
         font-size: 2rem;
     }
     .header {
-        height: 8%;
+        height: 7%;
     }
     .container {
-        height: 92%;
+        height: 93%;
     }
 }
