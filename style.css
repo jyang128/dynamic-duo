@@ -1,41 +1,34 @@
+@font-face {
+    font-family: "Calvin";
+    src: url(fonts/calvin.ttf);
+}
 body {
     margin: 0 auto;
     background: url('images/calvin-and-hobbes-abstract.png') no-repeat;
     background-size: cover;
     height: 100vh;
     font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    box-sizing: border-box;
-}
-@font-face {
-    font-family: "Calvin";
-    src: url(fonts/calvin.ttf);
 }
 .header {
-    box-sizing: border-box;
     margin: 0 auto;
     width: 100%;
-    height: 10%;
+    height: 12%;
     background-color: rgba(255, 255, 255, 0.55);
     text-align: center;
 }
-.header > p {
-    font-size: 1em;
-}
 .stats-area {
-    box-sizing: border-box;
     margin: 0 auto;
     width: 85%;
     font-size:0;
 }
 .stats-area > * {
-    font-size: 18px;
-    vertical-align: top;
-    text-align: center;
+    font-size: 1rem;
 }
 .stats-area div {
     margin: 0 auto;
-    display: inline-block;
     width: 20%;
+    vertical-align: top;
+    display: inline-block;
 }
 .reset-button {
     transition: all .2s ease-in-out;
@@ -47,17 +40,15 @@ body {
 }
 .reset-button:active {
     transform: scale(1.15);
-    color: #cd0000;
-    cursor: pointer;
 }
 .container {
     box-sizing: border-box;
     margin: 0 auto;
     width: 85%;
-    height: 90%;
-    font-size: 0;
+    height: 87%;
     padding: 10px;
     text-align: center;
+    font-size: 0;
 }
 .container > * {
     font-size: 1rem;
@@ -74,11 +65,11 @@ body {
     font-size: 1rem;
 }
 .card-container {
-    position: relative;
-    background-color: transparent;
     width: 16.66%;
     height: 33.33%;
     display: inline-block;
+    position: relative;
+    background-color: transparent;
     transition: all .1s ease-in-out;
 }
 .card-container:hover {
@@ -99,9 +90,9 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    border-radius: 15px;
     left: 0;
     top: 0;
+    border-radius: 15px;
 }
 .back {
     background-color: white; /*do this so the images don't flash on load*/
@@ -109,12 +100,12 @@ body {
 }
 /* modal to hold the modal pieces that will need to be centered */
 .congrats-modal {
+    width: 100vw;
+    height: 100vh;
     display: none;
     position: absolute;
     top: 0;
     left: 0; 
-    width: 100vw;
-    height: 100vh;
     text-align: center;
     background-color:white;
 }
@@ -135,11 +126,11 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
 }
-@media screen and (min-width: 580px) {
-    .header > p {
-        font-size: 2rem;
+@media screen and (min-width: 855px) {
+    .stats-area > * {
+        font-size: 1.15rem;
     }
     .header {
         height: 7%;

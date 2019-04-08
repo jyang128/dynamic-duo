@@ -4,7 +4,7 @@ function initializeApp() {
     display_stats();
     createCards(fullImages);
     appendCardsToDom();
-    $('.back').on('click', card_clicked);
+    $('.game-area').on('click', '.back', card_clicked);
 }
 
 var images = [
@@ -37,7 +37,6 @@ $('.reset-button').on('click', function(){
         $('.card-container').remove();
         createCards(fullImages);
         appendCardsToDom();
-        $('.back').on('click', card_clicked);
         reset_stats();
 });
 
@@ -57,10 +56,10 @@ function display_stats(){
 // takes the fullImages array and randomizes the cards
 function createCards(fullImages) {
     for (var cardIndex = fullImages.length - 1; cardIndex >= 0; cardIndex--) {
-        var randomNum = Math.floor(Math.random() * fullImages.length);
-        var itemToSwap = fullImages[randomNum];
+        var randomNum = Math.floor(Math.random() * (cardIndex + 1));
+        var imageToSwap = fullImages[randomNum];
         fullImages[randomNum] = fullImages[cardIndex];
-        fullImages[cardIndex] = itemToSwap;
+        fullImages[cardIndex] = imageToSwap;
     }
 }
 
@@ -90,6 +89,8 @@ function card_clicked() {
         second_card_back = $(this);
         if (first_card_clicked === second_card_clicked) {
             match_counter++;
+            attempts++;
+            accuracy = (match_counter / attempts) * 100;
             display_stats();
             first_card_clicked = null;
             second_card_clicked = null;
@@ -99,23 +100,24 @@ function card_clicked() {
             }
         } else {
             //prevent any further clicks until flip_card runs
-            $('.back').off('click', card_clicked);
+            $('.game-area').off('click', '.back', card_clicked);
             setTimeout(flip_card, 900);
-            //note that subsequent lines of code still continue to run even during setTimeout
+            //remember that subsequent lines of code would still continue to run even during setTimeout
         }
-        attempts++;
-        accuracy = (match_counter / attempts) * 100;
-        display_stats();
     }
 }
+
 //callback functions to reference inside setTimeout functions
 function show_win(){
     $('.congrats-modal').fadeIn(500);
 }
 function flip_card() {
-    first_card_clicked = null;
-    second_card_clicked = null;
     first_card_back.fadeIn(100);
     second_card_back.fadeIn(100);
-    $('.back').on('click', card_clicked);
+    $('.game-area').on('click', '.back', card_clicked);
+    attempts++;
+    accuracy = (match_counter / attempts) * 100;
+    display_stats();
+    first_card_clicked = null;
+    second_card_clicked = null;
 }
