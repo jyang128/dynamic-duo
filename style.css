@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "Calvin";
+    src: url(fonts/calvin.ttf);
+}
+body {
+    margin: 0 auto;
+    background: url('images/calvin-and-hobbes-abstract.png') no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.header {
+    margin: 0 auto;
+    width: 100%;
+    height: 12%;
+    background-color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+}
+.stats-area {
+    margin: 0 auto;
+    width: 85%;
+    font-size:0;
+}
+.stats-area > * {
+    font-size: 1rem;
+}
+.stats-area div {
+    margin: 0 auto;
+    width: 20%;
+    vertical-align: top;
+    display: inline-block;
+}
+.reset-button {
+    transition: all .2s ease-in-out;
+}
+.reset-button:hover {
+    transform: scale(1.2);
+    color: #cd0000;
+    cursor: pointer;
+}
+.reset-button:active {
+    transform: scale(1.15);
+}
+.container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 85%;
+    height: 87%;
+    padding: 10px;
+    text-align: center;
+    font-size: 0;
+}
+.container > * {
+    font-size: 1rem;
+}
+.game-area {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    text-align: center;
+    font-size: 0;
+}
+.game-area > * {
+    font-size: 1rem;
+}
+.card-container {
+    width: 16.66%;
+    height: 33.33%;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    transition: all .1s ease-in-out;
+}
+.card-container:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.card {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 87%;
+    width: 87%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 6px 6px 6px 0 rgba(0,0,0,0.5);
+}
+.front, .front > img, .back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+}
+.back {
+    background-color: white; /*do this so the images don't flash on load*/
+    content:url('images/cardback.png');
+}
+/* modal to hold the modal pieces that will need to be centered */
+.congrats-modal {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    text-align: center;
+    background-color:white;
+}
+.congrats-modal img {
+    width: 100%;
+}
+.congrats-modal div {
+    font-size: 1.75em;
+}
+.congrats-modal p {
+    font-size: 1em;
+    color: #cd0000;
+}
+/* center the contents of the container */
+/* top and left are relative to the parent */
+/* transform: translate () moves from the origin of the element itself! */
+.congrats-modal-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 855px) {
+    .stats-area > * {
+        font-size: 1.15rem;
+    }
+    .header {
+        height: 7%;
+    }
+    .container {
+        height: 93%;
+    }
+}
