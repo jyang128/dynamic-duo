@@ -3,23 +3,35 @@
     src: url(fonts/calvin.ttf);
 }
 body {
-    margin: 0 auto;
-    background: url('images/calvin-and-hobbes-abstract.png') no-repeat;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
     height: 100vh;
+    background: url('images/calvin-and-hobbes-fall.jpg') no-repeat;
+    background-size: cover;
     font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .header {
     margin: 0 auto;
-    width: 100%;
-    height: 12%;
-    background-color: rgba(255, 255, 255, 0.55);
+    box-sizing: border-box;
+    padding: 10px;
+    border: 5px solid black;
+    height: 10%;
+    background-color:white;
     text-align: center;
+    position: relative;
+}
+.text {
+    margin: 0px;
+    font-size: 1.25em;
 }
 .stats-area {
     margin: 0 auto;
     width: 85%;
     font-size:0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .stats-area > * {
     font-size: 1rem;
@@ -43,10 +55,10 @@ body {
 }
 .container {
     box-sizing: border-box;
+    padding: 10px;
     margin: 0 auto;
     width: 85%;
-    height: 87%;
-    padding: 10px;
+    height: 90%;
     text-align: center;
     font-size: 0;
 }
@@ -55,7 +67,6 @@ body {
 }
 .game-area {
     margin: 0 auto;
-    width: 100%;
     height: 100%;
     vertical-align: top;
     text-align: center;
@@ -80,11 +91,11 @@ body {
     position: absolute;
     top: 5%;
     left: 5%;
-    height: 87%;
-    width: 87%;
+    height: 88%;
+    width: 88%;
     background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 6px 6px 6px 0 rgba(0,0,0,0.5);
+    border: 5px solid #433c3c;
+    box-shadow: 3px 3px 3px 0 rgba(0,0,0,0.5);
 }
 .front, .front > img, .back{
     height: 100%;
@@ -92,13 +103,13 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 15px;
 }
 .back {
-    background-color: white; /*do this so the images don't flash on load*/
-    content:url('images/cardback.png');
+    background-color:  white;
+    content:url('images/card-back.png');
+    object-fit: contain;
 }
-/* modal to hold the modal pieces that will need to be centered */
+/*modal for win condition*/
 .congrats-modal {
     width: 100vw;
     height: 100vh;
@@ -128,7 +139,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
-@media screen and (min-width: 855px) {
+/* @media screen and (min-width: 855px) {
     .stats-area > * {
         font-size: 1.15rem;
     }
@@ -138,4 +149,73 @@ body {
     .container {
         height: 93%;
     }
+} */
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
 }
