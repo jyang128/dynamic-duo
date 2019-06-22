@@ -11,7 +11,6 @@ body {
     font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .header {
-    margin: 0 auto;
     box-sizing: border-box;
     padding: 10px;
     border: 5px solid black;
@@ -21,7 +20,6 @@ body {
     position: relative;
 }
 .text {
-    margin: 0px;
     font-size: 1.25em;
 }
 .stats-area {
@@ -34,12 +32,10 @@ body {
     transform: translate(-50%, -50%);
 }
 .stats-area > * {
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
-.stats-area div {
-    margin: 0 auto;
+.stats-area > div {
     width: 20%;
-    vertical-align: top;
     display: inline-block;
 }
 .reset-button {
@@ -88,11 +84,12 @@ body {
     cursor: pointer;
 }
 .card {
-    position: absolute;
-    top: 5%;
-    left: 5%;
     height: 88%;
     width: 88%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #ffffff;
     border: 5px solid #433c3c;
     box-shadow: 3px 3px 3px 0 rgba(0,0,0,0.5);
@@ -103,6 +100,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+    object-fit: contain;
 }
 .back {
     background-color:  white;
@@ -139,17 +137,36 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
-/* @media screen and (min-width: 855px) {
-    .stats-area > * {
-        font-size: 1.15rem;
-    }
-    .header {
-        height: 7%;
+@media screen and (max-width: 1024px) {
+    .stats-area {
+        width: 100%;
     }
     .container {
-        height: 93%;
+        width: 100%;
     }
-} */
+    .reset-button:hover, .card-container:hover {
+        transform: scale(1);
+    }
+}
+@media screen and (max-width: 768px) {
+    .stats-area > div {
+        width: 25%;
+    }
+    .container {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 667px) {
+    .stats-area > * {
+        font-size: 1.1rem;
+    }
+    .stats-area > div {
+        width: 25%;
+    }
+    .container {
+        width: 100%;
+    }
+}
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
@@ -203,19 +220,4 @@ body {
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
-}
-
-/* ----------- Non-Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) { 
 }
