@@ -2,6 +2,10 @@
     font-family: "Calvin";
     src: url(fonts/calvin.ttf);
 }
+@font-face {
+    font-family: "Architects Daughter";
+    src: url(fonts/architects-daughter.ttf);
+}
 body {
     margin: 0;
     padding: 0;
@@ -38,15 +42,15 @@ body {
     width: 20%;
     display: inline-block;
 }
-.reset-button {
+.button {
     transition: all .2s ease-in-out;
 }
-.reset-button:hover {
+.button:hover {
     transform: scale(1.2);
     color: #cd0000;
     cursor: pointer;
 }
-.reset-button:active {
+.button:active {
     transform: scale(1.15);
 }
 .container {
@@ -107,6 +111,42 @@ body {
     content:url('images/card-back.png');
     object-fit: contain;
 }
+/*welcome modal*/
+.welcome-modal {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    text-align: center;
+    background-color:white;
+}
+.modal-image {
+    height: 100%;
+}
+.modal-image img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.intro {
+    font-size: 1em;
+    font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+.welcome-modal p {
+    font-size: 1.75em;
+    color: #cd0000;
+}
+.welcome-modal-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 /*modal for win condition*/
 .congrats-modal {
     width: 100vw;
@@ -128,9 +168,6 @@ body {
     font-size: 1em;
     color: #cd0000;
 }
-/* center the contents of the container */
-/* top and left are relative to the parent */
-/* transform: translate () moves from the origin of the element itself! */
 .congrats-modal-inner {
     position: absolute;
     left: 50%;
@@ -144,27 +181,41 @@ body {
     .container {
         width: 100%;
     }
-    .reset-button:hover, .card-container:hover {
+    .button:hover, .card-container:hover {
         transform: scale(1);
     }
 }
 @media screen and (max-width: 768px) {
     .stats-area > div {
         width: 25%;
-    }
-    .container {
-        width: 100%;
-    }
-}
-@media screen and (max-width: 667px) {
-    .stats-area > * {
         font-size: 1.1rem;
     }
+}
+@media screen and (max-width: 375px) {
     .stats-area > div {
-        width: 25%;
+        font-size: 2.25rem;
     }
-    .container {
-        width: 100%;
+}
+@media screen and (max-height: 667px) {
+    .stats-area > * div {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .modal-image img {
+        height: 200px;
+    }
+    .intro {
+        font-size: .7em;
+    }
+}
+@media screen and (max-height: 375px) {
+    .stats-area > * {
+        font-size: 1rem;
+    }
+    .modal-image img {
+        height: 150px;
     }
 }
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */

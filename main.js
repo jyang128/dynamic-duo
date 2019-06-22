@@ -31,7 +31,7 @@ var accuracy = 0;
 var games_played = 0;
 
 //reset button sets up the game again and increments games played
-$('.reset-button').on('click', function(){
+$('.reset.button').on('click', function(){
         games_played++;
         $('.congrats-modal').fadeOut(500); // hide the overlay
         $('.card-container').remove();
@@ -39,6 +39,10 @@ $('.reset-button').on('click', function(){
         appendCardsToDom();
         reset_stats();
 });
+
+$('.start.button').on('click', function(){
+    $('.welcome-modal').fadeOut(500);
+})
 
 function reset_stats(){
     attempts = 0;
