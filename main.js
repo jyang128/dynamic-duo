@@ -1,6 +1,7 @@
 $(document).ready( initializeApp );
 
 function initializeApp() {
+    $('.welcome-modal').show();
     display_stats();
     createCards(fullImages);
     appendCardsToDom();

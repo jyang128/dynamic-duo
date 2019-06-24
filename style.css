@@ -8,9 +8,8 @@
 }
 body {
     margin: 0;
-    padding: 0;
     height: 100vh;
-    background: url('images/calvin-and-hobbes-fall.jpg') no-repeat;
+    background: url('images/calvin-and-hobbes-leaves.jpg') no-repeat;
     background-size: cover;
     font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -115,7 +114,7 @@ body {
 .welcome-modal {
     width: 100vw;
     height: 100vh;
-    display: block;
+    display: none;
     box-sizing: border-box;
     padding: 20px;
     position: absolute;
@@ -131,6 +130,7 @@ body {
     max-width: 100%;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
 }
 .intro {
     font-size: 1em;
@@ -141,7 +141,7 @@ body {
     font-size: 1.75em;
     color: #cd0000;
 }
-.welcome-modal-inner {
+.modal-inner {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -158,21 +158,13 @@ body {
     text-align: center;
     background-color:white;
 }
-.congrats-modal img {
-    width: 100%;
-}
-.congrats-modal div {
+.congrats {
     font-size: 1.75em;
+    padding-top: 40px; 
 }
 .congrats-modal p {
-    font-size: 1em;
+    font-size: 1.75em;
     color: #cd0000;
-}
-.congrats-modal-inner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 1024px) {
     .stats-area {
@@ -217,58 +209,4 @@ body {
     .modal-image img {
         height: 150px;
     }
-}
-/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-
-}
-/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Portrait */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: landscape) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
 }
