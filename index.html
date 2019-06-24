@@ -1,24 +1,29 @@
 <!doctype html>
 <html>
 <head>
-    <title>Memory Match - Jessica Yang</title>
+    <title>Memory Match Game</title>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="header">
     <div class="stats-area">
-        <div class="games-played">
-            <p class="label">games played . . . <span class="value"></span></p>
-        </div>
         <div class="attempts">
-            <p class="label">attempts . . . <span class="value"></span></p>
+            <div>attempts</div>
+            <div class="value"></div>
         </div>
         <div class="accuracy">
-            <p class="label">accuracy . . . <span class="value"></span></p>
+            <div>accuracy</div>
+            <div class="value"></div>
+        </div>
+        
+        <div class="games-played">
+            <div>games played</div>
+            <div class="value"></div>
         </div>
         <div>
-            <p class="reset-button">reset game &raquo;</p>
+            <div>reset game</div>
+            <div class="reset button"><strong>&orarr;</strong></div>
         </div>
     </div>
 </div>
@@ -27,11 +32,22 @@
         
     </div>
 </div>
+<div class="welcome-modal">
+    <div class="modal-inner">
+        <div class="modal-image">
+            <img src="images/calvin-and-hobbes dancing.gif" alt="dancing">
+        </div>
+        <div class="intro">A memory match card game featuring bill watterson's calvin and hobbes comic strip. Match the cards to win! </div>
+        <p class="start button">start game &raquo;</p>
+    </div>
+</div>
 <div class="congrats-modal">
-    <div class="congrats-modal-inner">
-        <img src="images/calvin-and-hobbes dancing.gif" alt="dancing">
-        <div>congrats! you win!</div>
-        <p class="reset-button">play again &raquo;</p>
+    <div class="modal-inner">
+        <div class="modal-image">
+            <img src="images/celebration.gif" alt="celebration">
+        </div>
+        <div class="congrats">congrats! you win!</div>
+        <p class="reset button">play again &raquo;</p>
     </div>
 </div>
 <script src="main.js"></script>
