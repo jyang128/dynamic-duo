@@ -180,16 +180,17 @@ body {
 @media screen and (min-width: 668px) and (max-width: 768px) {
     .stats-area > div {
         width: 25%;
-        font-size: 1.1rem;
-    }
-    .card-container {
-        width: 33.33%;
-        height: 25%;
+        font-size: 1.4rem;
     }
 }
 @media screen and (max-width: 375px) {
     .stats-area > div {
         font-size: .9rem;
+        width: 24%;
+    }
+    .card-container {
+        width: 33.33%;
+        height: 25%;
     }
 }
 @media screen and (max-height: 665px) {
