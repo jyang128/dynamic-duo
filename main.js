@@ -2,10 +2,7 @@ $(document).ready( initializeApp );
 
 function initializeApp() {
     $('.welcome-modal').show();
-    display_stats();
-    createCards(fullImages);
-    appendCardsToDom();
-    $('.game-area').on('click', '.back', card_clicked);
+    
 }
 
 var images = [
@@ -43,6 +40,10 @@ $('.reset.button').on('click', function(){
 
 $('.start.button').on('click', function(){
     $('.welcome-modal').fadeOut(500);
+    display_stats();
+    createCards(fullImages);
+    appendCardsToDom();
+    $('.game-area').on('click', '.back', card_clicked);
 })
 
 function reset_stats(){
