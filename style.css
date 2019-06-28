@@ -177,10 +177,10 @@ body {
         transform: scale(1);
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 668px) and (max-width: 768px) {
     .stats-area > div {
         width: 25%;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .card-container {
         width: 33.33%;
