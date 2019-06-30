@@ -2,51 +2,62 @@
     font-family: "Calvin";
     src: url(fonts/calvin.ttf);
 }
+@font-face {
+    font-family: "Architects Daughter";
+    src: url(fonts/architects-daughter.ttf);
+}
 body {
-    margin: 0 auto;
-    background: url('images/calvin-and-hobbes-abstract.png') no-repeat;
-    background-size: cover;
+    margin: 0;
     height: 100vh;
+    background: url('images/calvin-and-hobbes-leaves.jpg');
+    background-size: cover;
     font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .header {
-    margin: 0 auto;
-    width: 100%;
-    height: 12%;
-    background-color: rgba(255, 255, 255, 0.55);
+    box-sizing: border-box;
+    padding: 10px;
+    border: 5px solid black;
+    height: 10%;
+    background-color:white;
     text-align: center;
+    position: relative;
+}
+.text {
+    font-size: 1.25em;
 }
 .stats-area {
     margin: 0 auto;
     width: 85%;
     font-size:0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .stats-area > * {
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
-.stats-area div {
-    margin: 0 auto;
+.stats-area > div {
     width: 20%;
-    vertical-align: top;
     display: inline-block;
 }
-.reset-button {
+.button {
     transition: all .2s ease-in-out;
 }
-.reset-button:hover {
+.button:hover {
     transform: scale(1.2);
     color: #cd0000;
     cursor: pointer;
 }
-.reset-button:active {
+.button:active {
     transform: scale(1.15);
 }
 .container {
     box-sizing: border-box;
+    padding: 10px;
     margin: 0 auto;
     width: 85%;
-    height: 87%;
-    padding: 10px;
+    height: 90%;
     text-align: center;
     font-size: 0;
 }
@@ -55,7 +66,6 @@ body {
 }
 .game-area {
     margin: 0 auto;
-    width: 100%;
     height: 100%;
     vertical-align: top;
     text-align: center;
@@ -77,14 +87,15 @@ body {
     cursor: pointer;
 }
 .card {
+    height: 88%;
+    width: 88%;
     position: absolute;
-    top: 5%;
-    left: 5%;
-    height: 87%;
-    width: 87%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 6px 6px 6px 0 rgba(0,0,0,0.5);
+    border: 5px solid #433c3c;
+    box-shadow: 3px 3px 3px 0 rgba(0,0,0,0.5);
 }
 .front, .front > img, .back{
     height: 100%;
@@ -92,13 +103,51 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: 15px;
+    object-fit: contain;
 }
 .back {
-    background-color: white; /*do this so the images don't flash on load*/
-    content:url('images/cardback.png');
+    background-color:  white;
+    content:url('images/card-back.png');
+    object-fit: contain;
 }
-/* modal to hold the modal pieces that will need to be centered */
+/*welcome modal*/
+.welcome-modal {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    text-align: center;
+    background-color:white;
+}
+.modal-image {
+    height: 100%;
+}
+.modal-image img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+.intro {
+    font-size: 1em;
+    font-family: "Architects Daughter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+.welcome-modal p {
+    font-size: 1.75em;
+    color: #cd0000;
+}
+.modal-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+/*modal for win condition*/
 .congrats-modal {
     width: 100vw;
     height: 100vh;
@@ -109,33 +158,60 @@ body {
     text-align: center;
     background-color:white;
 }
-.congrats-modal img {
-    width: 100%;
-}
-.congrats-modal div {
+.congrats {
     font-size: 1.75em;
+    padding-top: 40px; 
 }
 .congrats-modal p {
-    font-size: 1em;
+    font-size: 1.75em;
     color: #cd0000;
 }
-/* center the contents of the container */
-/* top and left are relative to the parent */
-/* transform: translate () moves from the origin of the element itself! */
-.congrats-modal-inner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-@media screen and (min-width: 855px) {
-    .stats-area > * {
-        font-size: 1.15rem;
-    }
-    .header {
-        height: 7%;
+@media screen and (max-width: 1024px) {
+    .stats-area {
+        width: 100%;
     }
     .container {
-        height: 93%;
+        width: 100%;
+    }
+    .button:hover, .card-container:hover {
+        transform: scale(1);
+    }
+}
+@media screen and (min-width: 668px) and (max-width: 768px) {
+    .stats-area > div {
+        width: 25%;
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    .stats-area > div {
+        font-size: .9rem;
+        width: 24%;
+    }
+    .card-container {
+        width: 33.33%;
+        height: 25%;
+    }
+}
+@media screen and (max-height: 665px) {
+    .stats-area > * div {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .modal-image img {
+        height: 200px;
+    }
+    .intro {
+        font-size: .7em;
+    }
+}
+@media screen and (max-height: 375px) {
+    .stats-area > * {
+        font-size: 1rem;
+    }
+    .modal-image img {
+        height: 150px;
     }
 }
