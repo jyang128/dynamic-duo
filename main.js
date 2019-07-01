@@ -31,6 +31,13 @@ var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
 
+
+// start button hides the welcome modal and shows the game area
+$('.start.button').on('click', function(){
+    $('.game').css('visibility', 'visible');
+    $('.welcome-modal').fadeOut(500);
+})
+
 //reset button sets up the game again and increments games played
 $('.reset.button').on('click', function(){
         games_played++;
@@ -40,10 +47,6 @@ $('.reset.button').on('click', function(){
         appendCardsToDom();
         reset_stats();
 });
-
-$('.start.button').on('click', function(){
-    $('.welcome-modal').fadeOut(500);
-})
 
 function reset_stats(){
     attempts = 0;
@@ -107,7 +110,6 @@ function card_clicked() {
             //prevent any further clicks until flip_card runs
             $('.game-area').off('click', '.back', card_clicked);
             setTimeout(flip_card, 900);
-            //remember that subsequent lines of code would still continue to run even during setTimeout
         }
     }
 }
