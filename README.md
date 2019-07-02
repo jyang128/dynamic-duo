@@ -1,17 +1,17 @@
-# Memory Match
+# Dynamic Duo
 
 ## Overview
 
-> Memory match is a game with 18 cards face down and the player has to try and match all 9 pairs of matching cards by remembering the position of the cards.
-Once the player has match 2 cards they will be displayed face up until all pairs have been matched. Once all pairs have been matched the user will be
-displayed a message that they have won the game. As the user clicks through the cards stats will be kept letting the user know how many attempts and the
-accuracy of their choices.
+https://match.jessicakyang.com/
+ 
+A *Calvin and Hobbes* themed memory match card game with 18 randomized face-down cards. Click to flip cards and execute logic to check for matches and mismatches. Match all 9 pairs to win, and track your stats along the way. 
 
-> <a href="https://docs.google.com/presentation/d/1zlSHYatpaPsrq4LuOtyuE-RRIom4vRo-lXovQ0zPV0U/pub?start=false&loop=false&delayms=3000" target="_blank">Design Overview</a>
+### Future Enhancements
+- Add a limit to attempts before losing the game
+- Add medium and hard modes with more cards
+- Add sound effects
+- Add a leaderboard to track best-performing visitors with name and stats
 
-> <a href="https://drive.google.com/open?id=0B3R9g7F9YRS6SHd3Q3lRdWF0RkU" target="_blank">Flow Document</a>
+### Technology
 
-> ### Versions
-> - Version 1.0 (v1.0) - <a href="https://github.com/Learning-Fuze/memory_match/tree/version1.0">View Details</a>
-> - Version 0.5 (v0.5) - <a href="https://github.com/Learning-Fuze/memory_match/tree/version0.5">View Details</a>
-> - Version 0.1 (v0.1) - <a href="https://github.com/Learning-Fuze/memory_match/tree/version0.1">View Details</a>
+Created with Javascript, jQuery, HTML5, and CSS3

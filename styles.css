@@ -13,9 +13,11 @@ body {
 .game {
     height: 100vh;
     background: url('images/calvin-and-hobbes-leaves.jpg');
+    background-repeat: repeat-y;
     background-size: cover;
     visibility: hidden;
 }
+/* header and stats area */
 .header {
     box-sizing: border-box;
     padding: 10px;
@@ -41,17 +43,7 @@ body {
     width: 20%;
     display: inline-block;
 }
-.button {
-    transition: all .2s ease-in-out;
-}
-.button:hover {
-    transform: scale(1.2);
-    color: #cd0000;
-    cursor: pointer;
-}
-.button:active {
-    transform: scale(1.15);
-}
+/* game area and cards */
 .container {
     box-sizing: border-box;
     padding: 10px;
@@ -110,7 +102,7 @@ body {
     content:url('images/card-back-light.jpg');
     object-fit: contain;
 }
-/*welcome modal*/
+/* welcome modal */
 .welcome-modal {
     width: 100vw;
     height: 100vh;
@@ -147,7 +139,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
-/*modal for win condition*/
+/* modal for win condition */
 .congrats-modal {
     width: 100vw;
     height: 100vh;
@@ -166,6 +158,19 @@ body {
     font-size: 1.75em;
     color: #cd0000;
 }
+/* general button styling */
+.button {
+    transition: all .2s ease-in-out;
+}
+.button:hover {
+    transform: scale(1.2);
+    color: #cd0000;
+    cursor: pointer;
+}
+.button:active {
+    transform: scale(1.15);
+}
+/* media queries */
 @media screen and (max-width: 1024px) {
     .stats-area {
         width: 100%;
