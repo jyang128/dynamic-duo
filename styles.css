@@ -16,6 +16,7 @@ body {
     background-repeat: repeat-y;
     background-size: cover;
     visibility: hidden;
+    overflow: hidden;
 }
 /* header and stats area */
 .header {

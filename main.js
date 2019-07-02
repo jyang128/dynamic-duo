@@ -34,7 +34,10 @@ var games_played = 0;
 
 // start button hides the welcome modal and shows the game area
 $('.start.button').on('click', function(){
-    $('.game').css('visibility', 'visible');
+    $('.game').css({
+        'visibility': 'visible',
+        'overflow': 'visible'
+    });
     $('.welcome-modal').fadeOut(500);
 })
 
