@@ -106,8 +106,8 @@ body {
     object-fit: contain;
 }
 .back {
-    background-color:  white;
-    content:url('images/card-back.png');
+    background-color: #fff6cb;
+    content:url('images/card-back-light.jpg');
     object-fit: contain;
 }
 /*welcome modal*/
