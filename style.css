@@ -8,10 +8,13 @@
 }
 body {
     margin: 0;
+    font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.game {
     height: 100vh;
     background: url('images/calvin-and-hobbes-leaves.jpg');
     background-size: cover;
-    font-family: "Calvin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    visibility: hidden;
 }
 .header {
     box-sizing: border-box;
@@ -21,9 +24,6 @@ body {
     background-color:white;
     text-align: center;
     position: relative;
-}
-.text {
-    font-size: 1.25em;
 }
 .stats-area {
     margin: 0 auto;
