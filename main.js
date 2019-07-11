@@ -43,7 +43,10 @@ $('.start.button').on('click', function(){
 
 //reset button sets up the game again and increments games played
 $('.reset.button').on('click', function(){
+        if(attempts === 0) return;
         games_played++;
+        first_card_clicked = null;
+        second_card_clicked = null;
         $('.congrats-modal').fadeOut(500); // hide the overlay
         $('.card-container').remove();
         createCards(fullImages);
