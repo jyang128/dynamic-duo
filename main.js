@@ -43,7 +43,7 @@ $('.start.button').on('click', function(){
 
 //reset button sets up the game again and increments games played
 $('.reset.button').on('click', function(){
-        if(attempts === 0) return;
+        if(attempts === 0 && first_card_clicked === null) return;
         games_played++;
         first_card_clicked = null;
         second_card_clicked = null;
