@@ -103,15 +103,10 @@ body {
     background-color: #fff6cb;
     content:url('images/card-back-light.jpg');
     object-fit: contain;
-    opacity: 1;
-    /* height: 100%; */
     display: block;
-    transition: all .3s ease;
 }
 .back.hide {
-    opacity: 0;
     display: none;
-    /* height: 0; */
 }
 /* welcome modal */
 .welcome-modal {
@@ -160,6 +155,9 @@ body {
     left: 0; 
     text-align: center;
     background-color:white;
+}
+.congrats-modal.show {
+
 }
 .congrats {
     font-size: 1.75em;
