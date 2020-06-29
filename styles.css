@@ -103,6 +103,15 @@ body {
     background-color: #fff6cb;
     content:url('images/card-back-light.jpg');
     object-fit: contain;
+    opacity: 1;
+    /* height: 100%; */
+    display: block;
+    transition: all .3s ease;
+}
+.back.hide {
+    opacity: 0;
+    display: none;
+    /* height: 0; */
 }
 /* welcome modal */
 .welcome-modal {
@@ -111,7 +120,7 @@ body {
     display: none;
     box-sizing: border-box;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0; 
     text-align: center;
@@ -146,7 +155,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0; 
     text-align: center;
