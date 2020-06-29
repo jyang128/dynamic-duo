@@ -98,23 +98,13 @@ function card_clicked() {
     if (first_card_clicked === null) {
         first_card_clicked = $(this).prev().find('img').attr('src');
         first_card_back = $(this);
-
-        console.log('FIRST CARD CLICKED - 1', first_card_clicked)
-        console.log('FIRST CARD CLICKED - 2', second_card_clicked)
     } else {
         //prevent any further clicks until cards flip OR match is checked
         $('.game-area').off('click', '.back', card_clicked);
 
         second_card_clicked = $(this).prev().find('img').attr('src');
         second_card_back = $(this);
-
-        console.log('SECOND CARD CLICKED - 1', first_card_clicked)
-        console.log('SECOND CARD CLICKED - 2', second_card_clicked)
-
         if (first_card_clicked === second_card_clicked) {
-            console.log('BOTH MATCH - CARD BACK 1', first_card_back.prev().find('img').attr('src'))
-            console.log('BOTH MATCH - CARD BACK 2', second_card_back.prev().find('img').attr('src'))
-
             match_counter++;
             attempts++;
             accuracy = (match_counter / attempts) * 100;
@@ -126,12 +116,12 @@ function card_clicked() {
                 // SPECIAL CONGRATS
                 setTimeout(show_win, 500);
             }
+
             $('.game-area').on('click', '.back', card_clicked);
         } else {
             setTimeout(flip_card, 900);
         }
     }
-    console.log('matches', match_counter)
 }
 
 //callback functions to reference inside setTimeout functions
@@ -139,9 +129,6 @@ function show_win(){
     $('.congrats-modal').fadeIn(500);
 }
 function flip_card() {
-    console.log('FLIP CARD BACK 1', first_card_back.prev().find('img').attr('src'))
-    console.log('FLIP CARD BACK 2', second_card_back.prev().find('img').attr('src'))
-
     first_card_clicked = null;
     second_card_clicked = null;
     first_card_back.removeClass('hide');
